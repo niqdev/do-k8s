@@ -2,5 +2,5 @@
 
 ```bash
 # bootstrap cluster
-./bootstrap/apply.sh
+make
 ```

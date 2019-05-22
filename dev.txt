@@ -1,2 +1,6 @@
 # skeleton (first time)
 helm create bootstrap/
+
+# makefile
+http://makefiletutorial.com
+https://danyspin97.org/blog/makefiles-best-practices
