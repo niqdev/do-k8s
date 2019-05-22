@@ -10,4 +10,11 @@ cd ${CURRENT_PATH}
 
 ##############################
 
+# add seed helm repository
+helm repo add edgelevel https://edgelevel.github.io/gitops-k8s
+
+# download seed chart locally
+helm dependency update
+
+# apply chart
 helm template --values values.yaml . | kubectl apply -n argocd -f -
