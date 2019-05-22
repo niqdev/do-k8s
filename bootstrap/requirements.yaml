@@ -1,0 +1,4 @@
+dependencies:
+  - name: seed
+    version: 0.1.0
+    repository: https://edgelevel.github.io/gitops-k8s
