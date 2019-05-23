@@ -4,3 +4,29 @@ helm create bootstrap/
 # makefile
 http://makefiletutorial.com
 https://danyspin97.org/blog/makefiles-best-practices
+
+TODO travis
+```
+helm lint bootstrap/
+helm lint applications/
+```
+
+TODO in gitops-k8s/setup.md
+`.bashrc`
+```
+# K8S PROMPT
+[[ -f /opt/kube-ps1/kube-ps1.sh ]] && source /opt/kube-ps1/kube-ps1.sh
+#export KUBE_PS1_SYMBOL_COLOR=green
+PS1='$(kube_ps1)'$PS1
+kubeoff
+
+# K8S CONFIGS
+function kube-config-local {
+  export KUBECONFIG=
+}
+function kube-config-do {
+  export KUBECONFIG=~/.kube/do-k8s-kubeconfig.yaml
+  kubeon
+}
+kube-config-local
+```
