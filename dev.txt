@@ -5,12 +5,6 @@ helm create bootstrap/
 http://makefiletutorial.com
 https://danyspin97.org/blog/makefiles-best-practices
 
-TODO travis
-```
-helm lint bootstrap/
-helm lint applications/
-```
-
 TODO in gitops-k8s/setup.md
 `.bashrc`
 ```
