@@ -11,7 +11,7 @@ cd ${CURRENT_PATH}
 ##############################
 
 # add seed helm repository
-helm repo add edgelevel https://edgelevel.github.io/gitops-k8s
+helm repo add el-gitops https://edgelevel.github.io/gitops-k8s
 
 # download seed chart locally
 helm dependency update
