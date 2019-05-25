@@ -4,3 +4,6 @@ helm create bootstrap/
 # makefile
 http://makefiletutorial.com
 https://danyspin97.org/blog/makefiles-best-practices
+
+# helm
+https://hackernoon.com/the-art-of-the-helm-chart-patterns-from-the-official-kubernetes-charts-8a7cafa86d12
