@@ -7,3 +7,11 @@ https://danyspin97.org/blog/makefiles-best-practices
 
 # helm
 https://hackernoon.com/the-art-of-the-helm-chart-patterns-from-the-official-kubernetes-charts-8a7cafa86d12
+
+# range issues
+https://github.com/helm/helm/issues/1311
+https://github.com/helm/helm/issues/1987
+
+# TODO issues to override range
+cd bootstrap
+helm template --values values.yaml --set argocd.sourceRepos={a,b} . | grep AppProject -C 20
