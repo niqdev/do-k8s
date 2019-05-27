@@ -1,3 +1,4 @@
-argocd:
-  sourceRepos:
-    - https://github.com/niqdev/do-k8s.git
+seed:
+  argocd:
+    sourceRepos:
+      - https://github.com/niqdev/do-k8s.git
