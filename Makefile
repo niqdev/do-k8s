@@ -18,7 +18,7 @@ endif
 
 .PHONY: bootstrap
 bootstrap:
-	./bootstrap/apply.sh
+	./scripts/bootstrap.sh
 
 .PHONY: all
 all: requirements bootstrap

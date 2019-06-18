@@ -10,6 +10,11 @@ cd ${CURRENT_PATH}
 
 ##############################
 
+ROOT_PATH="${CURRENT_PATH}/.."
+BOOTSTRAP_PATH="${ROOT_PATH}/bootstrap/"
+
+cd ${BOOTSTRAP_PATH}
+
 # add helm repository
 helm repo add edgelevel-gitops https://edgelevel.github.io/gitops-k8s
 
