@@ -1,0 +1,3 @@
+externalDns:
+  domain: example.com
+  digitalOceanToken: abc

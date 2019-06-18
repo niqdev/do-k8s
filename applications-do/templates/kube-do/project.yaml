@@ -1,0 +1,11 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: kube-do-project
+spec:
+  sourceRepos:
+    - https://github.com/helm/charts.git
+  destinations:
+    - namespace: kube-do
+      server: https://kubernetes.default.svc

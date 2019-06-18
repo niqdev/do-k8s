@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+spec:
+  project: kube-do
+  source:
+    repoURL: https://github.com/helm/charts.git
+    path: stable/external-dns
+    helm:
+      parameters:
+        - name: provider
+          value: digitalocean
+        - name: digitalocean.apiToken
+          value: {{ .Values.externalDns.digitalOceanToken }}
+        - name: domainFilters
+          value: {{ .Values.externalDns.domain }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-do
