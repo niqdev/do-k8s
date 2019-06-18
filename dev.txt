@@ -1,3 +1,5 @@
+mv ~/do-k8s-kubeconfig.yaml ~/.kube/
+
 # skeleton (first time)
 helm create bootstrap/
 
@@ -7,5 +9,3 @@ https://danyspin97.org/blog/makefiles-best-practices
 
 # helm
 https://hackernoon.com/the-art-of-the-helm-chart-patterns-from-the-official-kubernetes-charts-8a7cafa86d12
-
-mv ~/do-k8s-kubeconfig.yaml ~/.kube/
