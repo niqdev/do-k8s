@@ -4,3 +4,9 @@ seed:
       - https://github.com/niqdev/do-k8s.git
   repository:
     targetRevision: master
+
+secrets:
+  # kube-do
+  digitalOceanToken: AAA
+  externalDnsDomain: hello.com
+  

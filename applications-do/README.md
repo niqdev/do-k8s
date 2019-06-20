@@ -29,3 +29,4 @@ helm template . \
 * [Setting Up a Domain with SSL on DigitalOcean Kubernetes using ExternalDNS and Helm](https://blog.andrewsomething.com/2019/04/04/external-dns-with-ssl-on-k8s)
 
 * [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret)
+* [Using Kubernetes Secrets](https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a)

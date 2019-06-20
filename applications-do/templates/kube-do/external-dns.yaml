@@ -8,14 +8,15 @@ spec:
   source:
     repoURL: https://github.com/helm/charts.git
     path: stable/external-dns
+    # https://github.com/argoproj/argo-cd/issues/1786
     helm:
       parameters:
         - name: provider
           value: digitalocean
         - name: digitalocean.apiToken
-          value: {{ .Values.externalDns.digitalOceanToken }}
+          value: $(DIGITAL_OCEAN_TOKEN)
         - name: domainFilters
-          value: {{ .Values.externalDns.domain }}
+          value: $(EXTERNAL_DNS_DOMAIN)
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-do
