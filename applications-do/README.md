@@ -29,3 +29,4 @@ helm template . \
 
 * [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret)
 * [Using Kubernetes Secrets](https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a)
+* [Kubernetes External Secrets](https://godaddy.github.io/2019/04/16/kubernetes-external-secrets)
