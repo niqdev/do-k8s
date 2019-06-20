@@ -14,8 +14,8 @@ cd applications-do/
 
 helm template . \
   --values values.yaml \
-  --set externalDns.domain=mydomain.com \
-  --set externalDns.digitalOceanToken=XYZ
+  --set externalDns.digitalOceanToken=XYZ \
+  --set externalDns.domain=mydomain.com
 ```
 
 **Resources**
