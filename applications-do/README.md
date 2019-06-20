@@ -19,7 +19,6 @@ helm template . \
 ```
 
 **Resources**
-
 * [An Introduction to Managing DNS](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-managing-dns)
 * [Domains and DNS](https://www.digitalocean.com/docs/networking/dns)
 * [An Introduction to the Kubernetes DNS Service](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-kubernetes-dns-service)
