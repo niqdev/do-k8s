@@ -22,6 +22,7 @@ helm template . \
 * [An Introduction to Managing DNS](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-managing-dns)
 * [Domains and DNS](https://www.digitalocean.com/docs/networking/dns)
 * [An Introduction to the Kubernetes DNS Service](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-kubernetes-dns-service)
+* [How To Automatically Manage DNS Records From DigitalOcean Kubernetes Using ExternalDNS](https://www.digitalocean.com/community/tutorials/how-to-automatically-manage-dns-records-from-digitalocean-kubernetes-using-externaldns)
 
 * [How to Manage CAA Records](https://www.digitalocean.com/docs/networking/dns/how-to/caa)
 * [An Introduction to Let's Encrypt](https://www.digitalocean.com/community/tutorials/an-introduction-to-let-s-encrypt)
