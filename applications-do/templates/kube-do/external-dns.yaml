@@ -13,11 +13,11 @@ spec:
       parameters:
         - name: provider
           value: digitalocean
+        - name: rbac.create
+          value: "true"
         - name: digitalocean.apiToken
           #value: $(DIGITAL_OCEAN_TOKEN)
           value: {{ .Values.externalDns.digitalOceanToken }}
-        - name: rbac.create
-          value: true
         #- name: domainFilters
           #value: $(EXTERNAL_DNS_DOMAIN)
         #  value: {{ .Values.externalDns.domain }}
