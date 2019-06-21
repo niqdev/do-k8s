@@ -11,11 +11,13 @@ spec:
     # https://github.com/argoproj/argo-cd/issues/1786
     helm:
       parameters:
-        #- name: provider
-        #  value: digitalocean
+        - name: provider
+          value: digitalocean
         - name: digitalocean.apiToken
           #value: $(DIGITAL_OCEAN_TOKEN)
           value: {{ .Values.externalDns.digitalOceanToken }}
+        - name: rbac.create
+          value: true
         #- name: domainFilters
           #value: $(EXTERNAL_DNS_DOMAIN)
         #  value: {{ .Values.externalDns.domain }}
