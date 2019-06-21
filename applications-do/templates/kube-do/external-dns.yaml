@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: external-dns
 spec:
-  project: kube-do
+  project: kube-do-project
   source:
     repoURL: https://github.com/helm/charts.git
     path: stable/external-dns
