@@ -5,7 +5,7 @@
 [travis-image]: https://travis-ci.org/niqdev/do-k8s.svg?branch=master
 [travis-url]: https://travis-ci.org/niqdev/do-k8s
 
-This cluster definition builds on top of the common infrastructure for Continuos Deployment and Observability configured in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s) and customized for DigitalOcean.
+This cluster definition is based on the common infrastructure for Continuos Deployment and Observability described in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s) and it's customized for DigitalOcean.
 
 ```bash
 # bootstrap cluster
