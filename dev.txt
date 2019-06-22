@@ -16,6 +16,13 @@ argocd app get external-dns --show-params
 # https://github.com/argoproj/argo-cd/issues/1660#issuecomment-500949592
 argocd app set external-dns -p 'domainFilters[0]=example.com'
 argocd app set external-dns -p 'domainFilters[1]=ambassador.example.com'
+argocd app unset external-dns -p 'domainFilters[0]'
+
+# TODO add service annotations 
+argocd app get prometheus-operator --show-params
+argocd app set prometheus-operator -p 'prometheus.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=prometheus.example.com'
+argocd app set prometheus-operator -p 'alertmanager.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=alertmanager.example.com'
+argocd app set prometheus-operator -p 'grafana.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=grafana.example.com'
 
 TODO update docs external-dns
 TODO manual steps

@@ -26,6 +26,7 @@ Resources
 * [How to Manage CAA Records](https://www.digitalocean.com/docs/networking/dns/how-to/caa)
 * [An Introduction to Let's Encrypt](https://www.digitalocean.com/community/tutorials/an-introduction-to-let-s-encrypt)
 * [Setting Up a Domain with SSL on DigitalOcean Kubernetes using ExternalDNS and Helm](https://blog.andrewsomething.com/2019/04/04/external-dns-with-ssl-on-k8s)
+* [Kubernetes Tutorial: Managing TLS Certificates with Ambassador](https://auth0.com/blog/kubernetes-tutorial-managing-tls-certificates-with-ambassador)
 * [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret)
 * [Using Kubernetes Secrets](https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a)
 * [Kubernetes External Secrets](https://godaddy.github.io/2019/04/16/kubernetes-external-secrets)
