@@ -17,6 +17,8 @@ spec:
           value: "true"
         - name: digitalocean.apiToken
           value: {{ .Values.digitalOceanToken }}
+        - name: externalTrafficPolicy
+          value: Local
         #- name: domainFilters[0]
         #  value: {{ .Values.domain }}
   destination:
