@@ -1,0 +1,29 @@
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: prometheus-mapping
+spec:
+  host: prometheus.{{ .Values.host }}
+  prefix: /
+  service: prometheus-operator-prometheus.observe:9090
+
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: alertmanager-mapping
+spec:
+  host: alertmanager.{{ .Values.host }}
+  prefix: /
+  service: prometheus-operator-alertmanager.observe:9093
+
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: grafana-mapping
+spec:
+  host: grafana.{{ .Values.host }}
+  prefix: /
+  service: prometheus-operator-grafana.observe:80

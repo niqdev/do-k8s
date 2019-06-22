@@ -16,3 +16,11 @@ argocd app get external-dns --show-params
 # https://github.com/argoproj/argo-cd/issues/1660#issuecomment-500949592
 argocd app set external-dns -p 'domainFilters[0]=example.com'
 argocd app set external-dns -p 'domainFilters[1]=ambassador.example.com'
+
+TODO update docs external-dns
+TODO manual steps
+1) create cluster
+2) add domain to project
+3) port-forward argo and update applications-do parameters
+  * digitalOceanToken
+  * domain
