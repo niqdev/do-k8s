@@ -1,3 +1,2 @@
-externalDns:
-  digitalOceanToken: abc
-  domain: example.com
+digitalOceanToken: digitalocean
+domain: namecheap.com

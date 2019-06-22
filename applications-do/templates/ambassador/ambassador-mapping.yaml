@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ambassador-mapping
+spec:
+  project: ambassador-project
+  source:
+    repoURL: https://github.com/niqdev/do-k8s.git
+    path: charts/ambassador-mapping
+    helm:
+      parameters:
+        - name: host
+          value: {{ .Values.domain }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ambassador

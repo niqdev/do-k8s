@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ambassador
+spec:
+  project: ambassador-project
+  source:
+    repoURL: https://github.com/helm/charts.git
+    path: stable/ambassador
+    helm:
+      parameters:
+        - name: replicaCount
+          value: "1"
+        - name: service.annotations
+          value: "external-dns.alpha.kubernetes.io/hostname: {{ .Values.domain }}"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ambassador

@@ -16,11 +16,9 @@ spec:
         - name: rbac.create
           value: "true"
         - name: digitalocean.apiToken
-          #value: $(DIGITAL_OCEAN_TOKEN)
-          value: {{ .Values.externalDns.digitalOceanToken }}
+          value: {{ .Values.digitalOceanToken }}
         #- name: domainFilters
-        #  #value: $(EXTERNAL_DNS_DOMAIN)
-        #  value: {{ .Values.externalDns.domain }}
+        #  value: {{ .Values.domain }}
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-do
