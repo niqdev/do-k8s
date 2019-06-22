@@ -13,7 +13,7 @@ spec:
         - name: replicaCount
           value: "1"
         - name: service.annotations.external-dns\.alpha\.kubernetes\.io/hostname
-          value: {{ .Values.domain }}
+          value: "ambassador.{{ .Values.domain }}"
   destination:
     server: https://kubernetes.default.svc
     namespace: ambassador

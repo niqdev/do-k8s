@@ -15,3 +15,4 @@ argocd login localhost:8080 --username admin
 argocd app get external-dns --show-params
 # https://github.com/argoproj/argo-cd/issues/1660#issuecomment-500949592
 argocd app set external-dns -p 'domainFilters[0]=example.com'
+argocd app set external-dns -p 'domainFilters[1]=ambassador.example.com'
