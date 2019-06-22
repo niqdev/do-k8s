@@ -4,7 +4,7 @@ kind: Mapping
 metadata:
   name: ambassador-mapping
 spec:
-  host: {{ .Values.host }}
+  host: ambassador.{{ .Values.host }}
   prefix: /
   rewrite: /ambassador/v0/diag/
   service: ambassador-admins.ambassador:8877
@@ -17,4 +17,4 @@ metadata:
   name: catch-all
 spec:
   prefix: /
-  service: https://github.com/niqdev/do-k8s
+  service: https://www.getambassador.io

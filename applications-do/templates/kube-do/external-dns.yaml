@@ -17,8 +17,8 @@ spec:
           value: "true"
         - name: digitalocean.apiToken
           value: {{ .Values.digitalOceanToken }}
-        - name: domainFilters[0]
-          value: {{ .Values.domain }}
+        #- name: domainFilters[0]
+        #  value: {{ .Values.domain }}
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-do
