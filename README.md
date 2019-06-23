@@ -15,14 +15,17 @@ This cluster definition is based on the common infrastructure for Continuos Depl
 2) Add a domain `example.com`
 3) Bootstrap the cluster `make`
 4) Port-forward ArgoCD and update `applications-do` parameters
-  * `digitalOceanToken`
-  * `domain`
-  *TODO fix argocd secrets [issue](https://github.com/argoproj/argo-cd/issues/1786)*
+    * `digitalOceanToken`
+    * `domain`
+    * *TODO fix argocd secrets [issue](https://github.com/argoproj/argo-cd/issues/1786)*
 4) Sync all the applications
 5) Add A and TXT records for each subdomain
     * `ambassador.example.com` - verify `service.annotations` with/without subdomain
     * `prometheus.example.com`
     * `alertmanager.example.com`
     * `grafana.example.com`
-    *TODO fix `external-dns.alpha.kubernetes.io/hostname` service annotations for each sub-chart in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s/blob/master/applications/templates/observe/prometheus-operator.yaml)*
+    * *TODO fix `external-dns.alpha.kubernetes.io/hostname` service annotations for each sub-chart in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s/blob/master/applications/templates/observe/prometheus-operator.yaml)*
     * `bot.example.com`
+    * *TODO* `argocd.example.com`
+    * *TODO* `kibana.example.com`
+6) *TODO setup TLS*
