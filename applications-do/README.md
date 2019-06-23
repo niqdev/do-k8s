@@ -9,16 +9,8 @@
     * [Setting up ExternalDNS for Services on DigitalOcean](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/digitalocean.md)
     * [Helm chart](https://github.com/helm/charts/tree/master/stable/external-dns)
 
-```bash
-cd applications-do/
+**Resources**
 
-helm template . \
-  --values values.yaml \
-  --set externalDns.digitalOceanToken=XYZ \
-  --set externalDns.domain=mydomain.com
-```
-
-Resources
 * [An Introduction to Managing DNS](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-managing-dns)
 * [Domains and DNS](https://www.digitalocean.com/docs/networking/dns)
 * [An Introduction to the Kubernetes DNS Service](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-kubernetes-dns-service)

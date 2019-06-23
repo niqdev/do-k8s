@@ -10,6 +10,8 @@ https://hackernoon.com/the-art-of-the-helm-chart-patterns-from-the-official-kube
 
 mv ~/do-k8s-kubeconfig.yaml ~/.kube/
 
+---
+
 kubectl port-forward service/argocd-server -n argocd 8080:443
 argocd login localhost:8080 --username admin
 argocd app get external-dns --show-params
@@ -18,16 +20,10 @@ argocd app set external-dns -p 'domainFilters[0]=example.com'
 argocd app set external-dns -p 'domainFilters[1]=ambassador.example.com'
 argocd app unset external-dns -p 'domainFilters[0]'
 
-# TODO add service annotations 
+# TODO add service annotations (fix charts)
 argocd app get prometheus-operator --show-params
 argocd app set prometheus-operator -p 'prometheus.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=prometheus.example.com'
 argocd app set prometheus-operator -p 'alertmanager.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=alertmanager.example.com'
 argocd app set prometheus-operator -p 'grafana.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=grafana.example.com'
 
-TODO update docs external-dns
-TODO manual steps
-1) create cluster
-2) add domain to project
-3) port-forward argo and update applications-do parameters
-  * digitalOceanToken
-  * domain
+TODO review kube-do / external-dns docs

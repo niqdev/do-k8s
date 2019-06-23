@@ -5,9 +5,24 @@
 [travis-image]: https://travis-ci.org/niqdev/do-k8s.svg?branch=master
 [travis-url]: https://travis-ci.org/niqdev/do-k8s
 
-This cluster definition is based on the common infrastructure for Continuos Deployment and Observability described in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s) and it's customized for DigitalOcean.
+This cluster definition is based on the common infrastructure for Continuos Deployment and Observability described in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s) and is customized for DigitalOcean.
 
-```bash
-# bootstrap cluster
-make
-```
+## Setup
+
+*TODO try to automate the steps below using the [API](https://developers.digitalocean.com/documentation/v2)*
+
+1) Create a Kubernetes cluster on DigitalOcean and download the config
+2) Add a domain `example.com`
+3) Bootstrap the cluster `make`
+4) Port-forward ArgoCD and update `applications-do` parameters
+  * `digitalOceanToken`
+  * `domain`
+  *TODO fix argocd secrets [issue](https://github.com/argoproj/argo-cd/issues/1786)*
+4) Sync all the applications
+5) Add A and TXT records for each subdomain
+    * `ambassador.example.com` - verify `service.annotations` with/without subdomain
+    * `prometheus.example.com`
+    * `alertmanager.example.com`
+    * `grafana.example.com`
+    *TODO fix `external-dns.alpha.kubernetes.io/hostname` service annotations for each sub-chart in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s/blob/master/applications/templates/observe/prometheus-operator.yaml)*
+    * `bot.example.com`
