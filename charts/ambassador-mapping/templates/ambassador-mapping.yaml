@@ -8,13 +8,3 @@ spec:
   prefix: /
   rewrite: /ambassador/v0/diag/
   service: ambassador-admins.ambassador:8877
-
-# TODO
----
-apiVersion: getambassador.io/v1
-kind: Mapping
-metadata:
-  name: catch-all
-spec:
-  prefix: /
-  service: https://www.getambassador.io

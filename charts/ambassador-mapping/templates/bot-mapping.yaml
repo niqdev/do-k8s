@@ -1,0 +1,10 @@
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: bot-mapping
+spec:
+  host: bot.{{ .Values.host }}
+  prefix: /
+  # TODO remove version "-v0-1" from service
+  service: mobile-carrier-bot-v0-1.bot:8000
