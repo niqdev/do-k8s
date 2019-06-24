@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: argocd-mapping
+spec:
+  host: argocd.{{ .Values.host }}
+  prefix: /
+  service: argocd-server.argocd:80
