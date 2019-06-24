@@ -8,8 +8,9 @@ spec:
   source:
     repoURL: https://github.com/helm/charts.git
     path: stable/external-dns
-    # version 1.7.10 - last commit before https://github.com/helm/charts/commit/19ae0b211eb291fd7e09949deb0784f44698b46e
-    # FIXME https://github.com/argoproj/argo-cd/issues/1145
+    # version 1.7.10 - last commit before 1.8.0 (broken)
+    # https://github.com/helm/charts/commit/19ae0b211eb291fd7e09949deb0784f44698b46e
+    # FIXME targetRevision vs helm version https://github.com/argoproj/argo-cd/issues/1145
     targetRevision: ef5879ff5003632e13c23c78c0b04367411a03da
     helm:
       parameters:
@@ -21,6 +22,7 @@ spec:
           value: "true"
         - name: externalTrafficPolicy
           value: Local
+        # TODO add whitelisting with range in values
         #- name: domainFilters[0]
         #  value: {{ .Values.domain }}
   destination:

@@ -1,3 +1,3 @@
-# TODO https://github.com/argoproj/argo-cd/issues/1786
+# TODO secrets https://github.com/argoproj/argo-cd/issues/1786
 digitalOceanToken: abc123
 domain: mydomain.com
