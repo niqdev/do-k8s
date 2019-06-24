@@ -13,7 +13,8 @@ spec:
         - name: replicaCount
           value: "1"
         - name: service.annotations.external-dns\.alpha\.kubernetes\.io/hostname
-          value: {{ .Values.domain }}
+          # wildcard dns record: see kube-do/external-dns for domain whitelisting
+          value: "*.{{ .Values.domain }}"
   destination:
     server: https://kubernetes.default.svc
     namespace: ambassador

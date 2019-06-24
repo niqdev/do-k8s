@@ -8,15 +8,14 @@ spec:
   source:
     repoURL: https://github.com/helm/charts.git
     path: stable/external-dns
-    # https://github.com/argoproj/argo-cd/issues/1786
     helm:
       parameters:
         - name: provider
           value: digitalocean
-        - name: rbac.create
-          value: "true"
         - name: digitalocean.apiToken
           value: {{ .Values.digitalOceanToken }}
+        - name: rbac.create
+          value: "true"
         - name: externalTrafficPolicy
           value: Local
         #- name: domainFilters[0]

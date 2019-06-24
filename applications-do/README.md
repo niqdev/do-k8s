@@ -7,6 +7,7 @@
 3) [How to Create a Personal Access Token](https://www.digitalocean.com/docs/api/create-personal-access-token)
 4) `external-dns`
     * [Setting up ExternalDNS for Services on DigitalOcean](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/digitalocean.md)
+    * [ExternalDNS FAQ](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/faq.md)
     * [Helm chart](https://github.com/helm/charts/tree/master/stable/external-dns)
 
 **Resources**
