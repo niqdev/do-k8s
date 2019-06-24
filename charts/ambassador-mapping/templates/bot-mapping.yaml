@@ -6,6 +6,5 @@ metadata:
 spec:
   host: bot.{{ .Values.host }}
   prefix: /
-  rewrite: /status
   # TODO remove version "-v0-1" from service
   service: mobile-carrier-bot-v0-1.bot:8000
