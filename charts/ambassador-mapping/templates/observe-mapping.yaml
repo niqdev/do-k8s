@@ -27,3 +27,13 @@ spec:
   host: grafana.{{ .Values.host }}
   prefix: /
   service: prometheus-operator-grafana.observe:80
+
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: kube-ops-view-mapping
+spec:
+  host: kube-ops-view.{{ .Values.host }}
+  prefix: /
+  service: kube-ops-view-kube-ops-view.observe:80

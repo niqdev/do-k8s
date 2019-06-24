@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: kubernetes-dashboard-mapping
+spec:
+  host: kubernetes-dashboard.{{ .Values.host }}
+  prefix: /
+  service: kubernetes-dashboard.kube-system:443
