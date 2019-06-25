@@ -22,6 +22,8 @@ This cluster definition is based on the common infrastructure for Continuos Depl
 
 Exposed services
 * `ambassador.example.com`
+* `kubernetes-dashboard.example.com`
+* `kube-ops-view.example.com`
 * `prometheus.example.com`
 * `alertmanager.example.com`
 * `grafana.example.com`
