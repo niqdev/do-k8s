@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: bot-project
+  name: bot
 spec:
   sourceRepos:
     - https://github.com/niqdev/mobile-carrier-bot.git

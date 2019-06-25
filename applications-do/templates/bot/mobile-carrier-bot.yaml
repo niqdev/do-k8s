@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: mobile-carrier-bot
 spec:
-  project: bot-project
+  project: bot
   source:
     repoURL: https://github.com/niqdev/mobile-carrier-bot.git
     path: charts/app
