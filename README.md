@@ -27,7 +27,15 @@ Exposed services
 * `prometheus.example.com`
 * `alertmanager.example.com`
 * `grafana.example.com`
+* *TODO* `elasticsearch.example.com`
+* *TODO* `cerebro.example.com`
+* *TODO* `kibana.example.com`
 * `bot.example.com`
 * *TODO* `argocd.example.com`
-* *TODO* `kibana.example.com`
-* *TODO setup TLS*
+
+TODO
+* [ ] override fluent-bit storageClassName `do-block-storage`
+* [ ] add EFK ambassador mapping
+* [ ] serve argocd over http
+* [ ] configure TLS/cert on ambassador for all services
+* [ ] update docs: namespace/service
