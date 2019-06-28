@@ -10,8 +10,8 @@ This cluster definition is based on the common infrastructure for Continuos Depl
 ## Bootstrap
 
 The [bootstrap](bootstrap) chart has two main purposes:
-* import the [`seed`](https://github.com/edgelevel/gitops-k8s/tree/master/charts/seed) chart to reuse and extend the common infrastracture
-* create an [Application of Applications](https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#application-of-applications-pattern) defined in this repository
+* import the [seed](https://github.com/edgelevel/gitops-k8s/tree/master/charts/seed) chart to reuse and extend the common infrastracture
+* declare an [Application of Applications](https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#application-of-applications-pattern)
 
 1) [Create](https://github.com/edgelevel/gitops-k8s#prerequisites) a Kubernetes cluster on [DigitalOcean](https://www.digitalocean.com/docs/kubernetes)
 2) [Add](https://www.digitalocean.com/docs/networking/dns/quickstart/#add-a-domain) a domain e.g. `example.com` from the control panel
@@ -20,9 +20,9 @@ The [bootstrap](bootstrap) chart has two main purposes:
     make
     ```
 4) Port-forward ArgoCD and override these application parameters from the UI
-    * `applications-do` > `digitalOceanToken` required to create a LoadBalancer: see [How to Create a Personal Access Token](https://www.digitalocean.com/docs/api/create-personal-access-token)
+    * `applications-do` > `digitalOceanToken`: a [Personal Access Token](https://www.digitalocean.com/docs/api/create-personal-access-token) is required to create a LoadBalancer
     * `applications-do` > `domain` e.g. `example.com`
-    * `fluent-bit` > `storageClassName`: `do-block-storage`
+    * `fluent-bit` > `storageClassName` i.e. `do-block-storage`
     * *TODO fix argocd secrets [issue](https://github.com/argoproj/argo-cd/issues/1786)*
 5) Sync all the applications from the UI manually
 
