@@ -34,5 +34,4 @@ argocd app set prometheus-operator -p 'grafana.service.annotations.external-dns\
 
 FIXME
 kubernetes-dashboard
-kube-ops-view
 alertmanager
