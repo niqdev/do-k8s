@@ -18,7 +18,7 @@ The [bootstrap](bootstrap) chart has two main purposes
 
 To setup a cluster follow these instructions
 1) install the [required tools](https://github.com/edgelevel/gitops-k8s#prerequisites)
-2) create manually a Kubernetes cluster on [DigitalOcean](https://www.digitalocean.com/docs/kubernetes)
+2) create a 3 nodes Kubernetes cluster on [DigitalOcean](https://www.digitalocean.com/docs/kubernetes)
 3) configure the [DNS](https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts)
     * buy a domain from a registrar
     * [point to DigitalOcean nameservers from a domain name registrar](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) in order to manage DNS records declaratively from the cluster
@@ -31,7 +31,7 @@ To setup a cluster follow these instructions
 6) [port-forward](https://github.com/edgelevel/gitops-k8s#bootstrap) ArgoCD (see step 3) and override these application parameters from the UI
     * `applications-do` > `digitalOceanToken` with the Personal Access Token to create a LoadBalancer
     * `applications-do` > `domain` e.g. `example.com`
-    * `fluent-bit` > `storageClassName` i.e. `do-block-storage` specific for [DigitalOcean](https://www.digitalocean.com/docs/kubernetes/how-to/add-volumes/#define-the-persistent-volume-claim)
+    * `elasticsearch` > `volumeClaimTemplate.storageClassName` with `do-block-storage` specific for [DigitalOcean](https://www.digitalocean.com/docs/kubernetes/how-to/add-volumes/#define-the-persistent-volume-claim)
     * *TODO fix argocd secrets [issue](https://github.com/argoproj/argo-cd/issues/1786) to automate the steps above*
 6) Sync all the applications from the UI manually
 
@@ -54,11 +54,11 @@ Applications in this repository are defined in the parent [applications-do](appl
     * `bot.example.com`
     * *TODO* `argocd.example.com`
 
-**`bot`** namespace is dedicated for a Scala pure FP [bot](https://github.com/niqdev/mobile-carrier-bot) to scrape the balance of mobile carriers
-
 **`kube-do`** namespace is dedicated for system wide resources tightly coupled to DigitalOcean
 
 * [`external-dns`](https://github.com/kubernetes-incubator/external-dns) synchronizes exposed Kubernetes Services and Ingresses with DNS providers
+
+**`bot`** namespace is dedicated for a Scala pure FP [bot](https://github.com/niqdev/mobile-carrier-bot) to scrape the balance of mobile carriers
 
 **Resources**
 
@@ -76,5 +76,5 @@ Applications in this repository are defined in the parent [applications-do](appl
 
 TODO
 * [ ] try to automate the bootstrap steps using the [API](https://developers.digitalocean.com/documentation/v2)
-* [ ] serve argocd over http
-* [ ] configure TLS/cert on ambassador for all services
+* [ ] expose argocd over http
+* [ ] configure TLS/cert and authentication on ambassador for all services

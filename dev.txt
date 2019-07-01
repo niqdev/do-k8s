@@ -31,3 +31,8 @@ argocd app set prometheus-operator -p 'alertmanager.service.annotations.external
 argocd app set prometheus-operator -p 'grafana.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=grafana.example.com'
 
 ---
+
+FIXME
+kubernetes-dashboard
+kube-ops-view
+alertmanager
