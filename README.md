@@ -76,6 +76,5 @@ Applications in this repository are defined in the parent [applications-do](appl
 
 TODO
 * [ ] try to automate the bootstrap steps using the [API](https://developers.digitalocean.com/documentation/v2)
-* [ ] add EFK ambassador mappings
 * [ ] serve argocd over http
 * [ ] configure TLS/cert on ambassador for all services
