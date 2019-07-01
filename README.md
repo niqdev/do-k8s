@@ -7,6 +7,9 @@
 
 This cluster definition is based on the common infrastructure for Continuos Deployment and Observability described in [edgelevel/gitops-k8s](https://github.com/edgelevel/gitops-k8s) and is customized for DigitalOcean
 
+* [Setup](#setup)
+* [Applications](#applications)
+
 ## Setup
 
 The [bootstrap](bootstrap) chart has two main purposes
@@ -16,8 +19,7 @@ The [bootstrap](bootstrap) chart has two main purposes
 To setup a cluster follow these instructions
 1) install the [required tools](https://github.com/edgelevel/gitops-k8s#prerequisites)
 2) create manually a Kubernetes cluster on [DigitalOcean](https://www.digitalocean.com/docs/kubernetes)
-3) configure the DNS
-    * read *[An Introduction to DNS Terminology, Components, and Concepts](https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts)* to get familiar with DNS
+3) configure the [DNS](https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts)
     * buy a domain from a registrar
     * [point to DigitalOcean nameservers from a domain name registrar](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars) in order to manage DNS records declaratively from the cluster
     * [add](https://www.digitalocean.com/docs/networking/dns/quickstart/#add-a-domain) a domain to your project from the control panel
@@ -27,21 +29,19 @@ To setup a cluster follow these instructions
     make
     ```
 6) [port-forward](https://github.com/edgelevel/gitops-k8s#bootstrap) ArgoCD (see step 3) and override these application parameters from the UI
-    * `applications-do` > `digitalOceanToken` with the token to create a LoadBalancer
+    * `applications-do` > `digitalOceanToken` with the Personal Access Token to create a LoadBalancer
     * `applications-do` > `domain` e.g. `example.com`
     * `fluent-bit` > `storageClassName` i.e. `do-block-storage` specific for [DigitalOcean](https://www.digitalocean.com/docs/kubernetes/how-to/add-volumes/#define-the-persistent-volume-claim)
     * *TODO fix argocd secrets [issue](https://github.com/argoproj/argo-cd/issues/1786) to automate the steps above*
 6) Sync all the applications from the UI manually
 
----
-
 ## Applications
 
 Applications in this repository are defined in the parent [applications-do](applications-do/templates) chart and are logically split into folders which represent Kubernetes namespaces
 
-**`ambassador`** namespace is dedicated for [Ambassador](https://www.getambassador.io) defines
-* an application with a service annotation to allow external-dns to automatically create a DNS record and internally route all the host-based requests
-* [`ambassador-mapping`](https://github.com/niqdev/do-k8s/tree/master/charts/ambassador-mapping) contains the definitions of all the routes in form of helm chart
+**`ambassador`** namespace is dedicated for [Ambassador](https://www.getambassador.io) and defines
+* an application with a service annotation to allow external-dns to automatically create DNS records and internally route all the requests
+* [`ambassador-mapping`](charts/ambassador-mapping/templates) contains the definitions of all the routes in form of helm chart
     * `ambassador.example.com`
     * `kubernetes-dashboard.example.com`
     * `kube-ops-view.example.com`
@@ -56,7 +56,7 @@ Applications in this repository are defined in the parent [applications-do](appl
 
 **`bot`** namespace is dedicated for a pure Scala FP Telegram [bot](https://github.com/niqdev/mobile-carrier-bot) to scrape the balance of mobile carriers
 
-**`kube-do`** namespace is dedicated for system wide resources tightly coupled to DigitalOcean like [external-dns](https://github.com/kubernetes-incubator/external-dns)
+**`kube-do`** namespace is dedicated for system wide resources tightly coupled to DigitalOcean
 
 * [`external-dns`](https://github.com/kubernetes-incubator/external-dns) synchronizes exposed Kubernetes Services and Ingresses with DNS providers
 
