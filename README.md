@@ -48,13 +48,13 @@ Applications in this repository are defined in the parent [applications-do](appl
     * `prometheus.example.com`
     * `alertmanager.example.com`
     * `grafana.example.com`
-    * *TODO* `elasticsearch.example.com`
-    * *TODO* `cerebro.example.com`
-    * *TODO* `kibana.example.com`
+    * `elasticsearch.example.com`
+    * `cerebro.example.com`
+    * `kibana.example.com`
     * `bot.example.com`
     * *TODO* `argocd.example.com`
 
-**`bot`** namespace is dedicated for a pure Scala FP Telegram [bot](https://github.com/niqdev/mobile-carrier-bot) to scrape the balance of mobile carriers
+**`bot`** namespace is dedicated for a Scala pure FP [bot](https://github.com/niqdev/mobile-carrier-bot) to scrape the balance of mobile carriers
 
 **`kube-do`** namespace is dedicated for system wide resources tightly coupled to DigitalOcean
 

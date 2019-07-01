@@ -37,3 +37,33 @@ spec:
   host: kube-ops-view.{{ .Values.host }}
   prefix: /
   service: kube-ops-view-kube-ops-view.observe:80
+
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: elasticsearch-mapping
+spec:
+  host: elasticsearch.{{ .Values.host }}
+  prefix: /
+  service: elasticsearch-master.observe:9200
+
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: cerebro-mapping
+spec:
+  host: cerebro.{{ .Values.host }}
+  prefix: /
+  service: cerebro.observe:80
+
+---
+apiVersion: getambassador.io/v1
+kind: Mapping
+metadata:
+  name: kibana-mapping
+spec:
+  host: kibana.{{ .Values.host }}
+  prefix: /
+  service: kibana-kibana.observe:5601
