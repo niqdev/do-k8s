@@ -8,10 +8,14 @@ https://danyspin97.org/blog/makefiles-best-practices
 # helm
 https://hackernoon.com/the-art-of-the-helm-chart-patterns-from-the-official-kubernetes-charts-8a7cafa86d12
 
+---
+
+# configs
 mv ~/do-k8s-kubeconfig.yaml ~/.kube/
 
 ---
 
+# argocd cli examples
 kubectl port-forward service/argocd-server -n argocd 8080:443
 argocd login localhost:8080 --username admin
 argocd app get external-dns --show-params
@@ -20,10 +24,10 @@ argocd app set external-dns -p 'domainFilters[0]=example.com'
 argocd app set external-dns -p 'domainFilters[1]=ambassador.example.com'
 argocd app unset external-dns -p 'domainFilters[0]'
 
-# TODO add service annotations (fix charts)
+# apply service annotations manually
 argocd app get prometheus-operator --show-params
 argocd app set prometheus-operator -p 'prometheus.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=prometheus.example.com'
 argocd app set prometheus-operator -p 'alertmanager.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=alertmanager.example.com'
 argocd app set prometheus-operator -p 'grafana.service.annotations.external-dns\.alpha\.kubernetes\.io/hostname=grafana.example.com'
 
-TODO review kube-do / external-dns docs
+---
