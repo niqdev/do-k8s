@@ -76,5 +76,3 @@ Applications in this repository are defined in the parent [applications-do](appl
 
 TODO
 * [ ] try to automate the bootstrap steps using the [API](https://developers.digitalocean.com/documentation/v2)
-* [ ] expose argocd over http
-* [ ] configure TLS/cert and authentication on ambassador for all services
