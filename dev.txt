@@ -8,6 +8,9 @@ https://danyspin97.org/blog/makefiles-best-practices
 # helm
 https://hackernoon.com/the-art-of-the-helm-chart-patterns-from-the-official-kubernetes-charts-8a7cafa86d12
 
+# TLS
+https://medium.com/asl19-developers/use-lets-encrypt-cert-manager-and-external-dns-to-publish-your-kubernetes-apps-to-your-website-ff31e4e3badf
+
 ---
 
 # configs
